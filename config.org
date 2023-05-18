@@ -1,0 +1,307 @@
+#+TITLE: Mi configuración de Emacs
+#+AUTHOR: Vim y LATEX en español
+
+* Índice :toc:
+- [[#ajustes-iniciales][Ajustes iniciales.]]
+- [[#ajustes-visuales][Ajustes visuales]]
+- [[#atajo-de-teclado-para-org-agenda][Atajo de teclado para ~org-agenda~]]
+- [[#para-mostrar-números-de-línea-relativo-como-en-vim][Para mostrar números de línea relativo (como en VIM)]]
+- [[#eliminando-los-números-de-línea-en-org-mode-y-text-mode-solo-los-veremos-en-latex-y-en-programación][Eliminando los números de línea en org-mode y text-mode (solo los veremos en LATEX y en programación)]]
+- [[#configurando-navegador][Configurando navegador]]
+- [[#configuración-de-paquetes][Configuración de paquetes]]
+  - [[#agregaremos-melpa][Agregaremos melpa]]
+  - [[#markdown-mode-requiere-la-instalación-de-use-package][markdown-mode (requiere la instalación de use-package)]]
+  - [[#emmet-mode][Emmet mode]]
+  - [[#darkroom-mode][Darkroom mode.]]
+  - [[#toc-org][toc-org]]
+  - [[#org-bullets][Org-bullets]]
+  - [[#lorem-ipsum-3][Lorem-ipsum :3]]
+  - [[#counsel-y-swiper-para-búsqueda][Counsel y Swiper para búsqueda]]
+  - [[#doom-modeline-la-barrita-de-doom-emacs][doom-modeline: La barrita de Doom Emacs]]
+  - [[#emms][EMMS]]
+  - [[#move-text][Move-text]]
+- [[#previsualización-de-latex-en-org-mode][Previsualización de LATEX en org-mode]]
+
+* Ajustes iniciales.
+
+Para poder usar emacs con esta configuración recomiendo crear un archivo llamado 'init.el', el cual deberá contener lo siguiente:
+
+#+begin_src
+
+(org-babel-load-file
+ (expand-file-name
+  "config.org"
+  user-emacs-directory))
+
+#+end_src
+
+De esta manera, podemos ir agregando nuestra configuración en el archivo 'config.org'
+
+* Ajustes visuales
+
+Vamos a:
+
+1. Pedir que emacs inicie maximizado.
+2. Quitar el mensaje de bienvenida.
+3. Esconder la barra de desplazamiento.
+4. Quitar la barra de herramientas.
+5. Vamos a agrandar nuestro "margen".
+6. Quitar la barra de menú.
+
+#+begin_src emacs-lisp
+
+(add-hook 'window-setup-hook 'toggle-frame-maximized t)
+(setq inhibit-startup-message t)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(set-fringe-mode 10)
+(menu-bar-mode -1)
+
+#+end_src
+
+
+
+A continuación vamos a cambiar la fuente y el tema
+(Inconsolata 12 pt)
+
+Siempre podemos agregar temas distintos de manera manual.
+
+#+begin_src emacs-lisp
+
+(set-face-attribute 'default nil :font "IBM Plex Mono" :height 110)
+;;(load-theme 'tango-dark)
+(load-theme 'solarized-dark t)
+(setq visible-bell t)
+#+end_src
+
+Quitemos el molesto doble espaciado para identificar el final de una oración/enunciado. Yo nunca lo he utilizado.
+
+#+begin_src emacs-lisp
+
+(setq sentence-end-double-space nil)
+
+#+end_src
+
+* Atajo de teclado para ~org-agenda~
+#+begin_src emacs-lisp
+
+(global-set-key (kbd "C-c a") 'org-agenda)
+
+#+end_src
+* Para mostrar números de línea relativo (como en VIM)
+
+Números de línea relativo. Nos van a indicar el número de renglones por encima y por debajo del cursor actual. Y nos muestra el número de línea ocupado por el cursor.
+
+#+begin_src emacs-lisp
+
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode)
+(global-visual-line-mode t)
+
+#+end_src
+
+* Eliminando los números de línea en org-mode y text-mode (solo los veremos en LATEX y en programación)
+
+#+begin_src emacs-lisp
+
+(defun no-despliegues ()
+  (display-line-numbers-mode -1)
+)
+(add-hook 'org-mode-hook 'no-despliegues)
+;;(add-hook 'text-mode-hook 'no-despliegues)
+(add-hook 'markdown-mode-hook 'no-despliegues)
+(add-hook 'eshell-mode-hook 'no-despliegues)
+
+#+end_src
+
+* Configurando navegador
+
+Configuración un tanto innecesaria, pero puede funcionar para forzar a emacs a abrir el navegador firefox para mostrar los sitios web.
+
+#+begin_src emacs-lisp
+
+;; El navegador por default es firefox
+(setq browse-url-browser-function 'browse-url-firefox)
+
+#+end_src
+
+* Configuración de paquetes
+
+** Agregaremos melpa
+
+Melpa es un repositorio de paquetes para emacs del que se pueden descargar paquetes bastante útiles.
+
+#+begin_src emacs-lisp
+
+(require 'package)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+
+
+#+end_src
+
+** markdown-mode (requiere la instalación de use-package)
+
+Markdown es un lenguaje de marcado universal. "Markdown mode" facilita la edición de archivos de markdown.
+
+#+begin_src emacs-lisp
+
+(use-package markdown-mode
+  :ensure t
+  :mode ("README\\.md\\'" . gfm-mode)
+  :init (setq markdown-command "multimarkdown")
+  :bind (:map markdown-mode-map
+         ("C-c C-e" . markdown-do)))
+
+#+end_src
+
+** Emmet mode
+
+Para la sintaxis de nuestros queridos documentos html. Emmet está basado en el plugin del mismo nombre del editor de texto VSCode con el que se pueden editar documentos HTML con una sintaxis muy simple.
+
+#+begin_src emacs-lisp
+
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(require 'emmet-mode)
+
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook 'emmet-mode)
+
+#+end_src
+
+** Darkroom mode.
+
+Para poder editar en un modo libre de distracciones. Es bastante parecido a Goyo en VIM. Otro plugin que hace lo mismo es Olivetti.
+
+#+begin_src emacs-lisp
+
+(require 'darkroom)
+
+#+end_src
+
+** toc-org
+
+Para crear una tabla de contenidos dentro de un documento de org-mode. Para invocarlo se requiere usar la etiqueta :toc: en un encabezado o subencabezado.
+
+#+begin_src emacs-lisp
+
+(add-to-list 'load-path "~/.emacs.d/lisp/toc-org")
+(if (require 'toc-org nil t)
+    (progn
+      (add-hook 'org-mode-hook 'toc-org-mode))
+      ;; enable in markdown, too
+      ;;(add-hook 'markdown-mode-hook 'toc-org-mode)
+      ;;(define-key markdown-mode-map (kbd "\C-c\C-o") 'toc-org-markdown-follow-thing-at-point))
+  (warn "toc-org not found"))
+
+#+end_src
+
+** Org-bullets
+
+Para que org-mode se vea más bonito. Comentado para que no sea forzoso.
+
+Lo que sí queda activada es la indentación en Org-mode.
+
+#+begin_src emacs-lisp
+
+;;(require 'org-bullets)
+;;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(setq org-startup-indented t)
+
+#+end_src
+
+** Lorem-ipsum :3
+
+Para agregar texto lorem ipsum.
+
+#+begin_src emacs-lisp
+
+(require 'lorem-ipsum)
+
+#+end_src
+** Counsel y Swiper para búsqueda
+
+Esta configuración facilita la búsqueda de palabras y de archivos.
+
+#+begin_src emacs-lisp
+
+(use-package counsel
+  :ensure t
+)
+(use-package swiper
+  :ensure try
+  :config
+  (progn
+  (ivy-mode)
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  ;; enable this if you want `swiper' to use it
+  ;; (setq search-default-mode #'char-fold-to-regexp)
+  (global-set-key "\C-s" 'swiper)
+  (global-set-key (kbd "C-c C-r") 'ivy-resume)
+  (global-set-key (kbd "<f6>") 'ivy-resume)
+  (global-set-key (kbd "M-x") 'counsel-M-x)
+  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+  (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+  (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+  (global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
+  (global-set-key (kbd "<f1> l") 'counsel-find-library)
+  (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+  (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+  (global-set-key (kbd "C-c g") 'counsel-git)
+  (global-set-key (kbd "C-c j") 'counsel-git-grep)
+  (global-set-key (kbd "C-c k") 'counsel-ag)
+  (global-set-key (kbd "C-x l") 'counsel-locate)
+  (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+  (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+  ))
+
+#+end_src
+
+** doom-modeline: La barrita de Doom Emacs
+
+Es una elegante barrita que nos da la información necesaria sobre nuestro archivo. 
+
+#+begin_src emacs-lisp
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :custom ((doom-modeline-height 15)))
+
+#+end_src
+
+
+** EMMS
+
+Para reproducir audio dentro de Emacs.
+
+#+begin_src emacs-lisp
+
+(add-to-list 'load-path "~/.emacs.d/lisp/emms")
+(require 'emms-setup)
+  (emms-all)
+  (emms-default-players)
+  (setq emms-source-file-default-directory "~/Music/") ;; Change to your music folder
+
+#+end_src
+
+** Move-text
+
+Para poder inicializar move-text, que nos sirve para mover líneas con M-up M-down. Instalarla con package-install
+
+#+begin_src emacs-lisp
+
+(move-text-default-bindings)
+
+#+end_src
+
+* Previsualización de LATEX en org-mode
+
+Con el comando C-c C-x C-l se puede mostrar ecuaciones dentro de nuestro buffer actual de org-mode. Muy útil para apuntes.
+
+#+begin_src emacs-lisp
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+#+end_src

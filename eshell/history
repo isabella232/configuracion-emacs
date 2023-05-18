@@ -1,0 +1,128 @@
+mysql -u root -p
+mysql -u root -p
+mysql -u root -p
+mysql -u root 
+mysql -u  
+mysql -u admin
+sudo mysql
+mysql -u root -p
+sudo mysql -u root
+sudo mysql
+mysql -u root -p
+;
+clear
+exit
+sudo touch wordpress.conf
+exit
+sudoedit wordpress.conf
+sudo a2enmod rewrite
+systemctl restart apache2
+sudo apache2ctl configtest
+cd /tmp
+curl -O https://wordpress.org/latest.tar.gz
+tar xzvf latest.tar.gz
+touch wordpress/.htaccess
+cp wordpress/wp-config-sample.php /wordpress/wp-config.php
+cp wordpress/wp-config-sample.php wordpress/wp-config.php
+mkdir wordpress/wp-content/upgrade
+sudo cp -a /tmp/wordpress/ /var/www/wordpress
+sudo chown -R www-data:www-data /var/www/wordpress
+sudo find /var/www/wordpress/ -type d -exec chmod 750 {} \;
+sudo find /var/www/wordpress/ -type f -exec chmod 640 {} \;
+curl -s https://api.wordpress.org/secret-key/1.1/salt/
+cd
+cd /var/www/wordpress/
+lsblk
+lsblk -l
+exit
+yt-dlp --cookies-from-browser firefox https://www.instagram.com/p/CsRJOFdNnIk3Ksq4DHewqhLk6VSTvlsCIoBSgY0/
+mpv Video\ by\ llamap3\ \[CsRJOFdNnIk3Ksq4DHewqhLk6VSTvlsCIoBSgY0\].mp4
+cd
+cd .cache/
+ls
+cd xfce4/ls
+cd xfce4
+ls
+du -sh notifyd/
+cd ..
+exit
+gcc -o numeros numeros.c
+./numeros
+gcc -o numeros numeros.c
+gcc -o numeros numeros.c
+gcc -o numeros numeros.c
+gcc -o numeros numeros.c
+./numeros
+gcc -o numeros numeros.c
+./numeros
+rm numeros
+gcc -o numeros numeros.c
+./numeros
+gcc -o numeros numeros.c
+clear
+exit
+gcc -o numeros numeros.c
+./numeros
+gcc -o numeros numeros.c
+gcc -o numeros numeros.c
+./numeros
+gcc -o numeros numeros.c
+./numeros
+gcc -o numeros numeros.c
+./numeros
+gcc -o numeros numeros.c
+./numeros
+./numeros
+gcc -o numeros numeros.c
+./numeros
+python3
+python3 listas.py
+python3 listas.py
+cd ~/Music/
+yt-dlp -f 251 https://www.youtube.com/watch?v=WIKqgE4BwAY
+ffmpeg -i BABYMETAL\ -\ ギミチョコ！！-\ Gimme\ chocolate\!\!\ \(OFFICIAL\)\ \[WIKqgE4BwAY\].webm -b:a 128k GimmeChocolate.ogg
+kid3-cli GimmeChocolate.ogg
+exit
+python3 listas2.py
+python3 listas2.py
+python3 listas2.py
+python3 listas2.py
+python3 listas2.py > salida.txt+
+rm salida.txt+
+python3 listas2.py > salida.txt
+exit
+python3 listas2.py
+exit
+python3 listas2.py
+python3 listas2.py
+python3 listas2.py
+python3 listas2.py
+python3 listas2.py
+exit
+exit
+python3 listas2.py
+ls
+python3 listas2.py > salida.txt
+exit
+python3 listas2.py > salida.txt
+rm salida.*
+python3 listas2.py > salida.txt
+exit
+python3 listas2.py
+python3 listas2.py > archivo
+cat archivo
+python3 listas2.py > archivo
+cat archivo
+cd ~/Music/
+yt-dlp -f 251 https://www.youtube.com/watch?v=p5yJgu38D24
+ffmpeg -i Gold\ Digger\ \(Explicit\)\ \[p5yJgu38D24\].webm -b:a 128k GoldDigger.ogg
+kid3-cli GoldDigger.ogg
+yt-dlp -f 251 https://www.youtube.com/watch?v=3mwiO5st-us
+ffmpeg -i Stronger\ \[3mwiO5st-us\].webm -b:a 128k Stronger.ogg
+kid3-cli Stronger.ogg
+yt-dlp -f 251 https://www.youtube.com/watch?v=wVRF3SqLUi0
+ffmpeg -i Kanye\ West\ -\ Bound\ 2\ \(audio\)\ \[wVRF3SqLUi0\].webm Bound2.ogg
+kid3-cli Bound2.ogg
+python3 listas2.py > hola 
+cat hola
+exit
