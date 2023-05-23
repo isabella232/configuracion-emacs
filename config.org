@@ -1,30 +1,11 @@
 #+TITLE: Mi configuración de Emacs
 #+AUTHOR: Vim y LATEX en español
-
-* Índice :toc:
-- [[#ajustes-iniciales][Ajustes iniciales.]]
-- [[#ajustes-visuales][Ajustes visuales]]
-- [[#atajo-de-teclado-para-org-agenda][Atajo de teclado para ~org-agenda~]]
-- [[#para-mostrar-números-de-línea-relativo-como-en-vim][Para mostrar números de línea relativo (como en VIM)]]
-- [[#eliminando-los-números-de-línea-en-org-mode-y-text-mode-solo-los-veremos-en-latex-y-en-programación][Eliminando los números de línea en org-mode y text-mode (solo los veremos en LATEX y en programación)]]
-- [[#configurando-navegador][Configurando navegador]]
-- [[#configuración-de-paquetes][Configuración de paquetes]]
-  - [[#agregaremos-melpa][Agregaremos melpa]]
-  - [[#markdown-mode-requiere-la-instalación-de-use-package][markdown-mode (requiere la instalación de use-package)]]
-  - [[#emmet-mode][Emmet mode]]
-  - [[#darkroom-mode][Darkroom mode.]]
-  - [[#toc-org][toc-org]]
-  - [[#org-bullets][Org-bullets]]
-  - [[#lorem-ipsum-3][Lorem-ipsum :3]]
-  - [[#counsel-y-swiper-para-búsqueda][Counsel y Swiper para búsqueda]]
-  - [[#doom-modeline-la-barrita-de-doom-emacs][doom-modeline: La barrita de Doom Emacs]]
-  - [[#emms][EMMS]]
-  - [[#move-text][Move-text]]
-- [[#previsualización-de-latex-en-org-mode][Previsualización de LATEX en org-mode]]
+#+OPTIONS: num:nil 
+#+LANGUAGE: es
 
 * Ajustes iniciales.
 
-Para poder usar emacs con esta configuración recomiendo crear un archivo llamado 'init.el', el cual deberá contener lo siguiente:
+Para poder usar emacs con esta configuración deberás crear un archivo llamado 'init.el', el cual deberá contener lo siguiente:
 
 #+begin_src
 
@@ -59,7 +40,18 @@ Vamos a:
 
 #+end_src
 
+Esto es para mostrar el tiempo de carga de emacs.
 
+#+begin_src emacs-lisp
+;; Startup timer
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (message "Emacs ready in %s with %d garbage collections."
+                     (format "%.2f seconds"
+                             (float-time
+                              (time-subtract after-init-time before-init-time)))
+                     gcs-done)))
+#+end_src
 
 A continuación vamos a cambiar la fuente y el tema
 (Inconsolata 12 pt)
@@ -69,6 +61,7 @@ Siempre podemos agregar temas distintos de manera manual.
 #+begin_src emacs-lisp
 
 (set-face-attribute 'default nil :font "IBM Plex Mono" :height 110)
+
 ;;(load-theme 'tango-dark)
 (load-theme 'solarized-dark t)
 (setq visible-bell t)
@@ -88,6 +81,7 @@ Quitemos el molesto doble espaciado para identificar el final de una oración/en
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 #+end_src
+
 * Para mostrar números de línea relativo (como en VIM)
 
 Números de línea relativo. Nos van a indicar el número de renglones por encima y por debajo del cursor actual. Y nos muestra el número de línea ocupado por el cursor.
@@ -206,7 +200,7 @@ Lo que sí queda activada es la indentación en Org-mode.
 #+begin_src emacs-lisp
 
 ;;(require 'org-bullets)
-;;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
 (setq org-startup-indented t)
 
@@ -273,7 +267,6 @@ Es una elegante barrita que nos da la información necesaria sobre nuestro archi
 
 #+end_src
 
-
 ** EMMS
 
 Para reproducir audio dentro de Emacs.
@@ -305,3 +298,32 @@ Con el comando C-c C-x C-l se puede mostrar ecuaciones dentro de nuestro buffer 
 #+begin_src emacs-lisp
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
 #+end_src
+
+* Para ver lo que vienen siendo los emojis
+
+#+begin_src emacs-lisp
+
+(set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend)
+(use-package emojify
+  :config
+  (when (member "Noto Color Emoji" (font-family-list))
+    (set-fontset-font
+     t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend))
+  (setq emojify-display-style 'unicode)
+  (setq emojify-emoji-styles '(unicode))
+  (bind-key* (kbd "C-c .") #'emojify-insert-emoji)) ; override binding in any mode
+
+#+end_src
+
+* Configuración de org-capture
+
+#+begin_src emacs-lisp
+(setq org-capture-templates
+      '(("t" "Tarea" entry (file+headline "~/Documentos/org-mode/tareas.org" "Tareas")
+         "* TODO %?\n  %i\n  %a")
+        ("n" "Nota" entry (file+headline "~/Documentos/org-mode/notas.org" "Notas")
+         "* %?\n  %i\n  %a")))
+
+(global-set-key (kbd "C-c c") 'org-capture)
+#+end_src
+

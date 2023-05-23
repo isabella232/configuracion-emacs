@@ -5,7 +5,17 @@
 (set-fringe-mode 10)
 (menu-bar-mode -1)
 
+;; Startup timer
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (message "Emacs ready in %s with %d garbage collections."
+                     (format "%.2f seconds"
+                             (float-time
+                              (time-subtract after-init-time before-init-time)))
+                     gcs-done)))
+
 (set-face-attribute 'default nil :font "IBM Plex Mono" :height 110)
+
 ;;(load-theme 'tango-dark)
 (load-theme 'solarized-dark t)
 (setq visible-bell t)
@@ -59,7 +69,7 @@
   (warn "toc-org not found"))
 
 ;;(require 'org-bullets)
-;;(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
 (setq org-startup-indented t)
 
@@ -110,3 +120,21 @@
 (move-text-default-bindings)
 
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+
+(set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend)
+(use-package emojify
+  :config
+  (when (member "Noto Color Emoji" (font-family-list))
+    (set-fontset-font
+     t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend))
+  (setq emojify-display-style 'unicode)
+  (setq emojify-emoji-styles '(unicode))
+  (bind-key* (kbd "C-c .") #'emojify-insert-emoji)) ; override binding in any mode
+
+(setq org-capture-templates
+      '(("t" "Tarea" entry (file+headline "~/Documentos/org-mode/tareas.org" "Tareas")
+         "* TODO %?\n  %i\n  %a")
+        ("n" "Nota" entry (file+headline "~/Documentos/org-mode/notas.org" "Notas")
+         "* %?\n  %i\n  %a")))
+
+(global-set-key (kbd "C-c c") 'org-capture)
