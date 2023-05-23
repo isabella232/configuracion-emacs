@@ -48,3 +48,5 @@ git push -uf origin main
 exit
 pandoc explicacion.org -o explicacion.html
 exit
+ln config.org README.org
+exit
