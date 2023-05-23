@@ -3,6 +3,29 @@
 #+OPTIONS: num:nil 
 #+LANGUAGE: es
 
+* Índice :toc:
+- [[#ajustes-iniciales][Ajustes iniciales.]]
+- [[#ajustes-visuales][Ajustes visuales]]
+- [[#atajo-de-teclado-para-org-agenda][Atajo de teclado para ~org-agenda~]]
+- [[#para-mostrar-números-de-línea-relativo-como-en-vim][Para mostrar números de línea relativo (como en VIM)]]
+- [[#eliminando-los-números-de-línea-en-org-mode-y-text-mode-solo-los-veremos-en-latex-y-en-programación][Eliminando los números de línea en org-mode y text-mode (solo los veremos en LATEX y en programación)]]
+- [[#configurando-navegador][Configurando navegador]]
+- [[#configuración-de-paquetes][Configuración de paquetes]]
+  - [[#agregaremos-melpa][Agregaremos melpa]]
+  - [[#markdown-mode-requiere-la-instalación-de-use-package][markdown-mode (requiere la instalación de use-package)]]
+  - [[#emmet-mode][Emmet mode]]
+  - [[#darkroom-mode][Darkroom mode.]]
+  - [[#toc-org][toc-org]]
+  - [[#org-bullets][Org-bullets]]
+  - [[#lorem-ipsum-3][Lorem-ipsum :3]]
+  - [[#counsel-y-swiper-para-búsqueda][Counsel y Swiper para búsqueda]]
+  - [[#doom-modeline-la-barrita-de-doom-emacs][doom-modeline: La barrita de Doom Emacs]]
+  - [[#emms][EMMS]]
+  - [[#move-text][Move-text]]
+- [[#previsualización-de-latex-en-org-mode][Previsualización de LATEX en org-mode]]
+- [[#para-ver-lo-que-vienen-siendo-los-emojis][Para ver lo que vienen siendo los emojis]]
+- [[#configuración-de-org-capture][Configuración de org-capture]]
+
 * Ajustes iniciales.
 
 Para poder usar emacs con esta configuración deberás crear un archivo llamado 'init.el', el cual deberá contener lo siguiente:

@@ -50,3 +50,10 @@ pandoc explicacion.org -o explicacion.html
 exit
 ln config.org README.org
 exit
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
