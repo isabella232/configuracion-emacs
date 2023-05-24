@@ -57,3 +57,8 @@ sent pres.txt
 sent pres.txt
 sent pres.txt
 sent pres.txt
+ln --help
+ln config.org README.org
+ls
+ls -la
+exit

@@ -138,3 +138,6 @@
          "* %?\n  %i\n  %a")))
 
 (global-set-key (kbd "C-c c") 'org-capture)
+
+(set-frame-parameter (selected-frame) 'alpha '(100 . 100))
+ (add-to-list 'default-frame-alist '(alpha . (100 . 100)))

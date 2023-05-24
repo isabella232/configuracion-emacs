@@ -25,6 +25,7 @@
 - [[#previsualización-de-latex-en-org-mode][Previsualización de LATEX en org-mode]]
 - [[#para-ver-lo-que-vienen-siendo-los-emojis][Para ver lo que vienen siendo los emojis]]
 - [[#configuración-de-org-capture][Configuración de org-capture]]
+- [[#para-evitar-transparencias-no-es-estrictamente-necesario][Para evitar transparencias (no es estrictamente necesario)]]
 
 * Ajustes iniciales.
 
@@ -350,3 +351,9 @@ Con el comando C-c C-x C-l se puede mostrar ecuaciones dentro de nuestro buffer 
 (global-set-key (kbd "C-c c") 'org-capture)
 #+end_src
 
+* Para evitar transparencias (no es estrictamente necesario)
+
+#+begin_src emacs-lisp
+(set-frame-parameter (selected-frame) 'alpha '(100 . 100))
+ (add-to-list 'default-frame-alist '(alpha . (100 . 100)))
+#+end_src
