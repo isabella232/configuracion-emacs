@@ -72,7 +72,7 @@
       ;;(define-key markdown-mode-map (kbd "\C-c\C-o") 'toc-org-markdown-follow-thing-at-point))
   (warn "toc-org not found"))
 
-;;(require 'org-bullets)
+;;(require 'org-superstar) <- En caso de no tenerlo instalado.
 (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
 (setq org-startup-indented t)

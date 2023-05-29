@@ -16,7 +16,7 @@
   - [[#emmet-mode][Emmet mode]]
   - [[#darkroom-mode][Darkroom mode.]]
   - [[#toc-org][toc-org]]
-  - [[#org-bullets][Org-bullets]]
+  - [[#org-superstar][Org-superstar]]
   - [[#lorem-ipsum-3][Lorem-ipsum :3]]
   - [[#counsel-y-swiper-para-búsqueda][Counsel y Swiper para búsqueda]]
   - [[#doom-modeline-la-barrita-de-doom-emacs][doom-modeline: La barrita de Doom Emacs]]
@@ -219,7 +219,7 @@ Para crear una tabla de contenidos dentro de un documento de org-mode. Para invo
 
 #+end_src
 
-** Org-bullets
+** Org-superstar
 
 Para que org-mode se vea más bonito. Comentado para que no sea forzoso.
 
@@ -227,7 +227,7 @@ Lo que sí queda activada es la indentación en Org-mode.
 
 #+begin_src emacs-lisp
 
-;;(require 'org-bullets)
+;;(require 'org-superstar) <- En caso de no tenerlo instalado.
 (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
 (setq org-startup-indented t)
@@ -329,6 +329,8 @@ Con el comando C-c C-x C-l se puede mostrar ecuaciones dentro de nuestro buffer 
 
 * Para ver lo que vienen siendo los emojis
 
+Requiere la instalación de "Noto Color Emoji". Una fuente que puede desplegar los emoji en Emacs. Por otra parte, emojify permite insertar emojis dentro de nuestro bufer. Tal vez no sea la función más útil, pero puede servir para algo eventualmente.
+
 #+begin_src emacs-lisp
 
 (set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend)
@@ -344,6 +346,8 @@ Con el comando C-c C-x C-l se puede mostrar ecuaciones dentro de nuestro buffer 
 #+end_src
 
 * Configuración de org-capture
+
+Org-capture es un modo que permite tomar notas sobre las mismas notas.
 
 #+begin_src emacs-lisp
 (setq org-capture-templates
