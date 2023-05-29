@@ -13,7 +13,8 @@
  '(line-number-mode nil)
  '(org-agenda-files '("~/Documentos/org-mode/compras14mayo.org"))
  '(package-selected-packages
-   '(heaven-and-hell emojify cl-libify org-superstar olivetti move-text doom-modeline solarized-theme magit try auctex use-package markdown-mode)))
+   '(spacemacs-theme heaven-and-hell emojify cl-libify org-superstar olivetti move-text doom-modeline solarized-theme magit try auctex use-package markdown-mode))
+ '(spacemacs-theme-keyword-italic t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

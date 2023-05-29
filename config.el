@@ -14,10 +14,14 @@
                               (time-subtract after-init-time before-init-time)))
                      gcs-done)))
 
-(set-face-attribute 'default nil :font "IBM Plex Mono" :height 110)
+;;(set-face-attribute 'default nil :font "Fira Code Retina" :height 110)
+(set-face-attribute 'default nil
+:font "IBM Plex Mono"
+:height 110)
 
 ;;(load-theme 'tango-dark)
-(load-theme 'solarized-dark t)
+;;(load-theme 'solarized-dark t)
+(load-theme 'spacemacs-dark t)
 (setq visible-bell t)
 
 (setq sentence-end-double-space nil)

@@ -1,64 +1,128 @@
-sudo rm wordpress
-sudo rm wordpress -rf
-exit
-gcc -o hipotenusa hipotenusa.c
-gcc -o hipotenusa hipotenusa.c -lm
-./hipotenusa
-./hipotenusa
-./hipotenusa
-./hipotenusa
-gcc lista.c -o lista
-./lista
-sent pres.txt
-sent pres.txt
-sent pres.txt
-sent pres.txt
-sent pres.txt
-sent pres.txt
-sent pres.txt
-sent pres.txt
-exit
-git init
-git remote add origin https://gitlab.com/nosoyanonimo/mi-pagina-web.git
-gti branch -m main
-git branch -m main
-git add .
-git commit -m "Esta es una prueba"
-git push -u origin main
-git push -uf origin main
-exit
-git init
-git add .
-git remote add origin https://gitlab.com/nosoyanonimo/nosoyanonimo.gitlab.io.git
-git branch -M main
-git commit "Probando"
-git commit -m "Probando"
-git push -uf origin main
-git push -uf origin main
-exit
-git add .
-git commit -m "Probando 2"
-git push -uf origin main
-exit
-git add .
-git commit "Corrigiendo"
-git commit -m "Corrigiendo"
-git push -f origin master
-git push -uf origin main
-exit
-pandoc explicacion.org -o explicacion.html
-exit
-ln config.org README.org
-exit
-sent pres.txt
-sent pres.txt
-sent pres.txt
-sent pres.txt
-sent pres.txt
-sent pres.txt
-sent pres.txt
-ln --help
-ln config.org README.org
+rm Video\ by*
 ls
-ls -la
+cd ConfiguracionEMacs/
+ls
 exit
+cd
+yt-dlp https://www.instagram.com/p/Cstm96wNqDwD0BoCkhK2wJLwFNcZxW8JJjE25I0/
+yt-dlp --cookies-from-browser firefox https://www.instagram.com/p/Cstm96wNqDwD0BoCkhK2wJLwFNcZxW8JJjE25I0/
+mpv Video\ by\ llamap3\ \[Cstm96wNqDwD0BoCkhK2wJLwFNcZxW8JJjE25I0\].mp4
+clear
+echo "este es el fin"
+echo "Sin nada que hacer"
+exit
+gcc -o inicio inicio.c
+./inicio
+gcc -o inicio inicio.c
+5.2
+gcc -o inicio inicio.c
+./inicio
+exit
+gcc -o sumanumeros suma.c
+gcc -o sumanumeros sumanumeros.c
+./sumanumeros
+gcc -o sumanumeros sumanumeros.c
+./sumanumeros
+./sumanumeros
+gcc -o sumanumeros sumanumeros.c
+./sumanumeros
+gcc -o sumanumeros sumanumeros.c
+gcc -o sumanumeros sumanumeros.c
+gcc -o sumanumeros sumanumeros.c
+./sumanumeros
+gcc -o sumanumeros sumanumeros.c
+./sumanumeros
+./sumanumeros
+gcc -o sumaIte sumanumeros.c
+gcc -o sumaForm sumanumeros.c
+gcc -o sumaIte sumanumeros.c
+gcc -o sumaIte sumanumeros.c
+./sumaform
+./sumaForm
+./sumaIte
+gcc -o sumaRec sumanumeros.c
+gcc -o sumaRec sumanumeros.c
+./sumaRec
+gcc -o factores factores.c
+gcc -o factores factores.c
+gcc -o factores factores.c
+gcc -o factores factores.c
+gcc -o factores factores.c
+gcc -o factores factores.c
+gcc -o factores factores.c
+gcc -o factores factores.c
+gcc -o factores factores.c
+gcc -o factores factores.c
+./factores
+gcc -o factores factores.c
+gcc -o factores factores.c
+gcc -o factores factores.c
+./factores
+gcc -o factores factores.c
+gcc -o factores factores.c
+./factores
+gcc -o factores factores.c
+./factores
+./factores
+./factores
+./factores
+./factores
+./factores
+gcc -o factores factores.c
+./factores 
+./factores 
+./factores 
+gcc -o factores2 factores2.c
+./factores2
+gcc -o 
+gcc -o 
+gcc -o numerosSuma numerosSuma.c
+./numerosSuma
+./numerosSuma
+gcc -o numerosSuma numerosSuma.c
+./numerosSuma
+gcc -o euclides euclides.c
+./euclides
+./euclides
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+./euclides
+gcc -o euclides euclides.c
+./euclides
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+gcc -o euclides euclides.c
+./euclides
+gcc -o euclides euclides.c
+./euclides
+gcc -o hola hola.cpp
+g++ -o hola hola.cpp
+./hola

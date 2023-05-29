@@ -78,16 +78,20 @@ Esto es para mostrar el tiempo de carga de emacs.
 #+end_src
 
 A continuación vamos a cambiar la fuente y el tema
-(Inconsolata 12 pt)
+(Debemos instalar Fira Code Retina previamente)
 
 Siempre podemos agregar temas distintos de manera manual.
 
 #+begin_src emacs-lisp
 
-(set-face-attribute 'default nil :font "IBM Plex Mono" :height 110)
+;;(set-face-attribute 'default nil :font "Fira Code Retina" :height 110)
+(set-face-attribute 'default nil
+:font "IBM Plex Mono"
+:height 110)
 
 ;;(load-theme 'tango-dark)
-(load-theme 'solarized-dark t)
+;;(load-theme 'solarized-dark t)
+(load-theme 'spacemacs-dark t)
 (setq visible-bell t)
 #+end_src
 
