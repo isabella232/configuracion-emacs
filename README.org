@@ -86,7 +86,7 @@ Siempre podemos agregar temas distintos de manera manual.
 
 ;;(set-face-attribute 'default nil :font "Fira Code Retina" :height 110)
 (set-face-attribute 'default nil
-:font "DejaVu Sans Mono"
+:font "IBM Plex Mono"
 :height 110)
 
 ;;(load-theme 'tango-dark)
@@ -329,6 +329,8 @@ Con el comando C-c C-x C-l se puede mostrar ecuaciones dentro de nuestro buffer 
 
 * Para ver lo que vienen siendo los emojis
 
+Requiere la instalación de "Noto Color Emoji". Una fuente que puede desplegar los emoji en Emacs. Por otra parte, emojify permite insertar emojis dentro de nuestro bufer. Tal vez no sea la función más útil, pero puede servir para algo eventualmente.
+
 #+begin_src emacs-lisp
 
 (set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend)
@@ -344,6 +346,8 @@ Con el comando C-c C-x C-l se puede mostrar ecuaciones dentro de nuestro buffer 
 #+end_src
 
 * Configuración de org-capture
+
+Org-capture es un modo que permite tomar notas sobre las mismas notas.
 
 #+begin_src emacs-lisp
 (setq org-capture-templates
