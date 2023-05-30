@@ -4,6 +4,7 @@
 #+LANGUAGE: es
 
 * Índice :toc:
+- [[#introducción][Introducción]]
 - [[#ajustes-iniciales][Ajustes iniciales.]]
 - [[#ajustes-visuales][Ajustes visuales]]
 - [[#atajo-de-teclado-para-org-agenda][Atajo de teclado para ~org-agenda~]]
@@ -26,6 +27,15 @@
 - [[#para-ver-lo-que-vienen-siendo-los-emojis][Para ver lo que vienen siendo los emojis]]
 - [[#configuración-de-org-capture][Configuración de org-capture]]
 - [[#para-evitar-transparencias-no-es-estrictamente-necesario][Para evitar transparencias (no es estrictamente necesario)]]
+
+* Introducción
+
+Emacs es un poderoso intérprete Lisp que tiene la característica de editar texto. Emacs es tan personalizable como lo requiramos. Y en este caso, esta configuración se acopla a lo que necesito de emacs como editor.
+
+Si quieren usar esta configuración, lo recomendable es que revisen personalmente qué es lo que les sirve de ella, y lo copien a su init.el. Si lo que requieren es probar mi propia configuración, adelante. Pueden clonar este repositorio, con la advertencia de que:
+
+1. Está configurado dentro de Linux Mint. En sistemas basados en Arch, la configuración de algunos plugins como emms cambian. Y tal vez hable de ello cuando hable en específico de Emms.
+2. Algunos de los paquetes llevan modificaciones que no están implementadas directamente en los repositorios de los paquetes instalados. Proceder con precaución.
 
 * Ajustes iniciales.
 
@@ -114,6 +124,8 @@ Quitemos el molesto doble espaciado para identificar el final de una oración/en
 
 Números de línea relativo. Nos van a indicar el número de renglones por encima y por debajo del cursor actual. Y nos muestra el número de línea ocupado por el cursor.
 
+He visto muchas configuraciones que insisten en instalar un paquete llamado linum. No es necesario agregar un paquete extra a Emacs para poder mostrar los números de línea.
+
 #+begin_src emacs-lisp
 
 (setq display-line-numbers-type 'relative)
@@ -133,6 +145,7 @@ Números de línea relativo. Nos van a indicar el número de renglones por encim
 ;;(add-hook 'text-mode-hook 'no-despliegues)
 (add-hook 'markdown-mode-hook 'no-despliegues)
 (add-hook 'eshell-mode-hook 'no-despliegues)
+(add-hook 'dired-mode-hook 'no-despliegues)
 
 #+end_src
 

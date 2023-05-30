@@ -1,6 +1,3 @@
-rm Video\ by*
-ls
-cd ConfiguracionEMacs/
 ls
 exit
 cd
@@ -126,3 +123,6 @@ gcc -o euclides euclides.c
 gcc -o hola hola.cpp
 g++ -o hola hola.cpp
 ./hola
+yt-dlp -f 251 https://www.youtube.com/watch?v=QXQQAsIhHMw
+ffmpeg -i ROSALÍA,\ Rauw\ Alejandro\ -\ BESO\ \(Official\ Video\)\ \[QXQQAsIhHMw\].webm -b:a 128k Beso.ogg
+exit

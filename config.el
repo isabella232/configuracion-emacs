@@ -39,6 +39,7 @@
 ;;(add-hook 'text-mode-hook 'no-despliegues)
 (add-hook 'markdown-mode-hook 'no-despliegues)
 (add-hook 'eshell-mode-hook 'no-despliegues)
+(add-hook 'dired-mode-hook 'no-despliegues)
 
 ;; El navegador por default es firefox
 (setq browse-url-browser-function 'browse-url-firefox)
