@@ -38,6 +38,7 @@ Si quieren usar esta configuración, lo recomendable es que revisen personalment
 2. Algunos de los paquetes llevan modificaciones que no están implementadas directamente en los repositorios de los paquetes instalados. Proceder con precaución.
 3. Dentro de init.el, en el apartado de ~package-selected-packages~ se encuentra la lista de paquetes que se han instalado desde ~M-x package-install RET~ (o sea, dentro de emacs). Instalarlos de esa manera los almacena dentro de la carpeta ~elpa~ que se encuentra casi siempre en ~/home/<nombre de usuario>/.emacs.d/~
 4. Requiere la tipografía "Noto Color Emoji" que nos va a servir para poder visualizar emojis en emacs (No es forzoso. Si no lo requieren, simplemente eliminen todo lo referente a emojify de este mismo archivo de configuración.
+5. El contenido del archivo ~README.org~ y el archivo ~config.org~ es el mismo. No es un duplicado. Lo hago para que en el repositorio se lea por default el contenido del archivo de configuración. Reitero, simplemente pueden copiar las partes que llamen su atención a su propio ~init.el~
 
 * Ajustes iniciales.
 
