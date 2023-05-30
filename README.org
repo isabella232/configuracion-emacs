@@ -9,7 +9,7 @@
 - [[#ajustes-visuales][Ajustes visuales]]
 - [[#atajo-de-teclado-para-org-agenda][Atajo de teclado para ~org-agenda~]]
 - [[#para-mostrar-números-de-línea-relativo-como-en-vim][Para mostrar números de línea relativo (como en VIM)]]
-- [[#eliminando-los-números-de-línea-en-org-mode-y-text-mode-solo-los-veremos-en-latex-y-en-programación][Eliminando los números de línea en org-mode y text-mode (solo los veremos en LATEX y en programación)]]
+- [[#eliminando-los-números-de-línea-en-modos-de-edición-de-texto-solo-los-veremos-en-latex-y-en-programación][Eliminando los números de línea en modos de edición de texto (solo los veremos en LATEX y en programación)]]
 - [[#configurando-navegador][Configurando navegador]]
 - [[#configuración-de-paquetes][Configuración de paquetes]]
   - [[#agregaremos-melpa][Agregaremos melpa]]
@@ -17,7 +17,7 @@
   - [[#emmet-mode][Emmet mode]]
   - [[#darkroom-mode][Darkroom mode.]]
   - [[#toc-org][toc-org]]
-  - [[#org-superstar][Org-superstar]]
+  - [[#org-superstar-e-indentación-de-archivos-de-org-mode][Org-superstar e indentación de archivos de ~org-mode~]]
   - [[#lorem-ipsum-3][Lorem-ipsum :3]]
   - [[#counsel-y-swiper-para-búsqueda][Counsel y Swiper para búsqueda]]
   - [[#doom-modeline-la-barrita-de-doom-emacs][doom-modeline: La barrita de Doom Emacs]]
@@ -37,6 +37,7 @@ Si quieren usar esta configuración, lo recomendable es que revisen personalment
 1. Está configurado dentro de Linux Mint. En sistemas basados en Arch, la configuración de algunos plugins como emms cambian. Y tal vez hable de ello cuando hable en específico de Emms.
 2. Algunos de los paquetes llevan modificaciones que no están implementadas directamente en los repositorios de los paquetes instalados. Proceder con precaución.
 3. Dentro de init.el, en el apartado de ~package-selected-packages~ se encuentra la lista de paquetes que se han instalado desde ~M-x package-install RET~ (o sea, dentro de emacs). Instalarlos de esa manera los almacena dentro de la carpeta ~elpa~ que se encuentra casi siempre en ~/home/<nombre de usuario>/.emacs.d/~
+4. Requiere la tipografía "Noto Color Emoji" que nos va a servir para poder visualizar emojis en emacs (No es forzoso. Si no lo requieren, simplemente eliminen todo lo referente a emojify de este mismo archivo de configuración.
 
 * Ajustes iniciales.
 
@@ -135,7 +136,13 @@ He visto muchas configuraciones que insisten en instalar un paquete llamado linu
 
 #+end_src
 
-* Eliminando los números de línea en org-mode y text-mode (solo los veremos en LATEX y en programación)
+* Eliminando los números de línea en modos de edición de texto (solo los veremos en LATEX y en programación)
+
+Declaramos una función que elimina los números de línea, y la invocamos con la carga de ciertos modos, como son:
+- org-mode
+- markdown-mode
+- eshell-mode (nadie quiere números de línea con su terminal)
+- dired-mode (supongo que nadie quiere números de línea en su administrador de archivos)
 
 #+begin_src emacs-lisp
 
@@ -152,7 +159,7 @@ He visto muchas configuraciones que insisten en instalar un paquete llamado linu
 
 * Configurando navegador
 
-Configuración un tanto innecesaria, pero puede funcionar para forzar a emacs a abrir el navegador firefox para mostrar los sitios web.
+Configuración un tanto innecesaria, pero puede funcionar para forzar a emacs a abrir el navegador firefox para mostrar los sitios web. En mi caso, casi siempre me abría un navegador web que no es el principal antes de agregarle ésta línea.
 
 #+begin_src emacs-lisp
 
@@ -165,7 +172,7 @@ Configuración un tanto innecesaria, pero puede funcionar para forzar a emacs a 
 
 ** Agregaremos melpa
 
-Melpa es un repositorio de paquetes para emacs del que se pueden descargar paquetes bastante útiles.
+Melpa es un repositorio de paquetes para emacs del que se pueden descargar paquetes bastante útiles. Se agregan también elpa y org.
 
 #+begin_src emacs-lisp
 
@@ -179,22 +186,26 @@ Melpa es un repositorio de paquetes para emacs del que se pueden descargar paque
 
 ** markdown-mode (requiere la instalación de use-package)
 
-Markdown es un lenguaje de marcado universal. "Markdown mode" facilita la edición de archivos de markdown.
+Markdown es un lenguaje de marcado universal. "Markdown mode" facilita la edición de archivos de markdown. He de ser honesto que para convertirlo a otro formato, prefiero usar pandoc desde eshell, por lo cual, ~init~ y ~bind~ no son tan necesarios. Además de ser comandos que no uso.
 
 #+begin_src emacs-lisp
 
 (use-package markdown-mode
   :ensure t
-  :mode ("README\\.md\\'" . gfm-mode)
-  :init (setq markdown-command "multimarkdown")
-  :bind (:map markdown-mode-map
-         ("C-c C-e" . markdown-do)))
+  :mode ("README\\.md\\'" . gfm-mode))
+  ;;:init (setq markdown-command "multimarkdown")
+  ;;:bind (:map markdown-mode-map
+         ;;("C-c C-e" . markdown-do)))
 
 #+end_src
 
 ** Emmet mode
 
 Para la sintaxis de nuestros queridos documentos html. Emmet está basado en el plugin del mismo nombre del editor de texto VSCode con el que se pueden editar documentos HTML con una sintaxis muy simple.
+
+En este caso coloco el archivo de emmet-mode.el en la subcarpeta lisp, y le pido a emacs que añada esta carpeta a la ruta de carga.
+
+Cabe destacar que este archivo está modificado por una cuestión que hay todavía con la librería ~cl~.
 
 #+begin_src emacs-lisp
 
@@ -208,7 +219,7 @@ Para la sintaxis de nuestros queridos documentos html. Emmet está basado en el 
 
 ** Darkroom mode.
 
-Para poder editar en un modo libre de distracciones. Es bastante parecido a Goyo en VIM. Otro plugin que hace lo mismo es Olivetti.
+Para poder editar en un modo libre de distracciones. Es bastante parecido a Goyo en VIM. Otro plugin que hace lo mismo es Olivetti (que también tengo instalado).
 
 #+begin_src emacs-lisp
 
@@ -233,9 +244,9 @@ Para crear una tabla de contenidos dentro de un documento de org-mode. Para invo
 
 #+end_src
 
-** Org-superstar
+** Org-superstar e indentación de archivos de ~org-mode~
 
-Para que org-mode se vea más bonito. Comentado para que no sea forzoso.
+Sucesor de org-bullets. Sirve para que org-mode se vea más bonito. Comentado para que no sea forzoso.
 
 Lo que sí queda activada es la indentación en Org-mode.
 
@@ -311,7 +322,7 @@ Es una elegante barrita que nos da la información necesaria sobre nuestro archi
 
 ** EMMS
 
-Para reproducir audio dentro de Emacs.
+Para reproducir audio dentro de Emacs. Esta configuración solo me sirve en linux mint. Para usarlo en sistemas basados en arch, solo hay que hacer unas modificaciones que agregaré más adelante.
 
 #+begin_src emacs-lisp
 
