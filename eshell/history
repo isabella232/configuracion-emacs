@@ -1,12 +1,3 @@
-gcc -o factores factores.c
-gcc -o factores factores.c
-gcc -o factores factores.c
-gcc -o factores factores.c
-gcc -o factores factores.c
-gcc -o factores factores.c
-gcc -o factores factores.c
-gcc -o factores factores.c
-gcc -o factores factores.c
 ./factores
 gcc -o factores factores.c
 gcc -o factores factores.c
@@ -125,4 +116,13 @@ sent pres.txt
 sent pres.txt
 du -sh pres.txt
 exi
+exit
+du -sh auto-save-list/
+cd auto-save-list/
+ls
+cd ..
+ls
+rm bookmarks
+rm network-security.data
+rm recentf*
 exit
