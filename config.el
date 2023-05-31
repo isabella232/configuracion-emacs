@@ -74,9 +74,9 @@
   (warn "toc-org not found"))
 
 ;;(require 'org-superstar) <- En caso de no tenerlo instalado.
-(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+;;(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
-(setq org-startup-indented t)
+;;(setq org-startup-indented t)
 
 (require 'lorem-ipsum)
 

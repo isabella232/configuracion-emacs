@@ -254,9 +254,9 @@ Lo que sí queda activada es la indentación en Org-mode.
 #+begin_src emacs-lisp
 
 ;;(require 'org-superstar) <- En caso de no tenerlo instalado.
-(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+;;(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
-(setq org-startup-indented t)
+;;(setq org-startup-indented t)
 
 #+end_src
 

@@ -1,46 +1,3 @@
-ls
-exit
-cd
-yt-dlp https://www.instagram.com/p/Cstm96wNqDwD0BoCkhK2wJLwFNcZxW8JJjE25I0/
-yt-dlp --cookies-from-browser firefox https://www.instagram.com/p/Cstm96wNqDwD0BoCkhK2wJLwFNcZxW8JJjE25I0/
-mpv Video\ by\ llamap3\ \[Cstm96wNqDwD0BoCkhK2wJLwFNcZxW8JJjE25I0\].mp4
-clear
-echo "este es el fin"
-echo "Sin nada que hacer"
-exit
-gcc -o inicio inicio.c
-./inicio
-gcc -o inicio inicio.c
-5.2
-gcc -o inicio inicio.c
-./inicio
-exit
-gcc -o sumanumeros suma.c
-gcc -o sumanumeros sumanumeros.c
-./sumanumeros
-gcc -o sumanumeros sumanumeros.c
-./sumanumeros
-./sumanumeros
-gcc -o sumanumeros sumanumeros.c
-./sumanumeros
-gcc -o sumanumeros sumanumeros.c
-gcc -o sumanumeros sumanumeros.c
-gcc -o sumanumeros sumanumeros.c
-./sumanumeros
-gcc -o sumanumeros sumanumeros.c
-./sumanumeros
-./sumanumeros
-gcc -o sumaIte sumanumeros.c
-gcc -o sumaForm sumanumeros.c
-gcc -o sumaIte sumanumeros.c
-gcc -o sumaIte sumanumeros.c
-./sumaform
-./sumaForm
-./sumaIte
-gcc -o sumaRec sumanumeros.c
-gcc -o sumaRec sumanumeros.c
-./sumaRec
-gcc -o factores factores.c
 gcc -o factores factores.c
 gcc -o factores factores.c
 gcc -o factores factores.c
@@ -125,4 +82,47 @@ g++ -o hola hola.cpp
 ./hola
 yt-dlp -f 251 https://www.youtube.com/watch?v=QXQQAsIhHMw
 ffmpeg -i ROSALÍA,\ Rauw\ Alejandro\ -\ BESO\ \(Official\ Video\)\ \[QXQQAsIhHMw\].webm -b:a 128k Beso.ogg
+exit
+gcc -o hola hola.c
+gcc -o hola hola.c
+./hola
+gcc -o hola hola.c
+./hola
+gcc -o hola hola.c
+./hola
+./hola
+gcc -o hola hola.c
+./hola
+exit
+exit
+sent pres.txt
+exit
+make clean
+sudo make install
+exit
+sent pres.txt7
+sent pres.txt
+cd sent/
+nano config.h
+make clean
+sudo make install
+exit
+sent pres.txt
+sent pres.txt
+sent pres.txt
+ls  
+reboot
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
+sent pres.txt
+du -sh pres.txt
+exi
 exit
