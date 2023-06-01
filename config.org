@@ -116,6 +116,12 @@ Quitemos el molesto doble espaciado para identificar el final de una oración/en
 
 #+end_src
 
+Usando emacsclient -c, me doy cuenta que no inicia cada ventana de forma maximizada.
+
+#+begin_src emacs-lisp
+(add-to-list 'default-frame-alist '(fullscreen . maximized)) 
+#+end_src
+
 * Atajo de teclado para ~org-agenda~
 #+begin_src emacs-lisp
 
@@ -386,6 +392,8 @@ Org-capture es un modo que permite tomar notas sobre las mismas notas.
 #+end_src
 
 * Para evitar transparencias (no es estrictamente necesario)
+
+Tengo unas cuestiones con Linux Mint que hacen que emacs se vea *muy* transparente. No debería ser necesario agregar esta parte, pero por si acaso.
 
 #+begin_src emacs-lisp
 (set-frame-parameter (selected-frame) 'alpha '(100 . 100))

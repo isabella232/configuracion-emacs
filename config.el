@@ -26,6 +26,8 @@
 
 (setq sentence-end-double-space nil)
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 (setq display-line-numbers-type 'relative)

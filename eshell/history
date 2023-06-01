@@ -1,25 +1,3 @@
-./factores
-gcc -o factores factores.c
-gcc -o factores factores.c
-gcc -o factores factores.c
-./factores
-gcc -o factores factores.c
-gcc -o factores factores.c
-./factores
-gcc -o factores factores.c
-./factores
-./factores
-./factores
-./factores
-./factores
-./factores
-gcc -o factores factores.c
-./factores 
-./factores 
-./factores 
-gcc -o factores2 factores2.c
-./factores2
-gcc -o 
 gcc -o 
 gcc -o numerosSuma numerosSuma.c
 ./numerosSuma
@@ -125,4 +103,26 @@ ls
 rm bookmarks
 rm network-security.data
 rm recentf*
+exit
+cd .emacs.d/
+ls -la
+exit
+cd .emacs.d/
+rm README.org
+ln config.org README.org
+ls -la 
+rm config.html
+exit
+gcc -o quicksort quicksort.c
+./quicksort
+gcc -o quicksort quicksort.c
+./quicksort
+gcc -o quicksort quicksort.c
+./quicksort
+exit
+mpv https://www.instagram.com/karen.psicologiacongracia/live/
+exit
+yt-dlp --cookies-from-browser firefox https://www.instagram.com/stories/mileyl026/3115057951870806599/
+mpv Video\ by\ None\ \[Cs66LP0A-pH\].mp4
+mpv Video\ by\ None\ \[Cs66LP0A-pH\].mp4
 exit
