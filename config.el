@@ -126,6 +126,14 @@
 
 (move-text-default-bindings)
 
+(add-to-list 'load-path "~/.emacs.d/lisp/all-the-icons.el")
+
+(when (display-graphic-p)
+  (require 'all-the-icons))
+;; or
+(use-package all-the-icons
+  :if (display-graphic-p))
+
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
 
 (set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend)

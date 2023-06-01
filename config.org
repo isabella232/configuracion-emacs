@@ -23,6 +23,7 @@
   - [[#doom-modeline-la-barrita-de-doom-emacs][doom-modeline: La barrita de Doom Emacs]]
   - [[#emms][EMMS]]
   - [[#move-text][Move-text]]
+  - [[#all-the-icons][All the icons]]
 - [[#previsualización-de-latex-en-org-mode][Previsualización de LATEX en org-mode]]
 - [[#para-ver-lo-que-vienen-siendo-los-emojis][Para ver lo que vienen siendo los emojis]]
 - [[#configuración-de-org-capture][Configuración de org-capture]]
@@ -349,6 +350,20 @@ Para poder inicializar move-text, que nos sirve para mover líneas con M-up M-do
 
 (move-text-default-bindings)
 
+#+end_src
+
+** All the icons
+
+El paquete "all-the-icons.el" instalado de forma manual
+
+#+begin_src emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/lisp/all-the-icons.el")
+
+(when (display-graphic-p)
+  (require 'all-the-icons))
+;; or
+(use-package all-the-icons
+  :if (display-graphic-p))
 #+end_src
 
 * Previsualización de LATEX en org-mode
